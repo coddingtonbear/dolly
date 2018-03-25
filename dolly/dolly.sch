@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:dolly-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -1689,13 +1690,13 @@ Wire Wire Line
 Wire Wire Line
 	5100 5550 5100 5800
 Connection ~ 5100 5800
-Text GLabel 5150 6400 0    60   Input ~ 0
+Text GLabel 4900 6600 0    60   Input ~ 0
 SPINDLE_PWM
 Text GLabel 4150 1750 2    60   Output ~ 0
 SPINDLE_PWM
 Wire Wire Line
 	4150 1750 3800 1750
-Text GLabel 5150 6500 0    60   Input ~ 0
+Text GLabel 5450 6700 3    60   Input ~ 0
 SPINDLE_DIR
 Text GLabel 4550 1850 2    60   Output ~ 0
 SPINDLE_DIR
@@ -1712,35 +1713,35 @@ Wire Wire Line
 $Comp
 L power:GND #PWR051
 U 1 1 5AD05D90
-P 5150 6600
-F 0 "#PWR051" H 5150 6350 50  0001 C CNN
-F 1 "GND" H 5155 6427 50  0000 C CNN
-F 2 "" H 5150 6600 50  0001 C CNN
-F 3 "" H 5150 6600 50  0001 C CNN
-	1    5150 6600
+P 6150 7000
+F 0 "#PWR051" H 6150 6750 50  0001 C CNN
+F 1 "GND" H 6155 6827 50  0000 C CNN
+F 2 "" H 6150 7000 50  0001 C CNN
+F 3 "" H 6150 7000 50  0001 C CNN
+	1    6150 7000
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector:Conn_01x03 J8
 U 1 1 5AD0BB41
-P 5350 6500
-F 0 "J8" H 5429 6542 50  0000 L CNN
-F 1 "Spindle" H 5429 6451 50  0000 L CNN
-F 2 "coddingtonbear:JST_XH_B03B-XH-A_03x2.50mm_Straight_LargePads" H 5350 6500 50  0001 C CNN
-F 3 "~" H 5350 6500 50  0001 C CNN
-	1    5350 6500
+P 6350 6700
+F 0 "J8" H 6429 6742 50  0000 L CNN
+F 1 "Spindle" H 6429 6651 50  0000 L CNN
+F 2 "coddingtonbear:JST_XH_B03B-XH-A_03x2.50mm_Straight_LargePads" H 6350 6700 50  0001 C CNN
+F 3 "~" H 6350 6700 50  0001 C CNN
+	1    6350 6700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	1000 5300 1100 5300
 Connection ~ 1100 5300
 $Comp
-L device:CP C?
+L device:CP C22
 U 1 1 5AD14727
 P 7750 4300
-F 0 "C?" H 7868 4346 50  0000 L CNN
+F 0 "C22" H 7868 4346 50  0000 L CNN
 F 1 "220u" H 7868 4255 50  0000 L CNN
-F 2 "ohdsp/KiCad-Libs/MyKiCadLibs-Footprints.pretty:CAP-SMD-SIZE-D" H 7788 4150 50  0001 C CNN
+F 2 "celeritous/KiCad.pretty:CAPACITOR_TANTALUM_C" H 7788 4150 50  0001 C CNN
 F 3 "" H 7750 4300 50  0001 C CNN
 	1    7750 4300
 	1    0    0    -1  
@@ -1750,4 +1751,46 @@ Wire Wire Line
 Wire Wire Line
 	7750 4450 7300 4450
 Connection ~ 7300 4450
+$Comp
+L device:C C?
+U 1 1 5AB8EF02
+P 5050 6750
+F 0 "C?" H 4935 6704 50  0000 R CNN
+F 1 "0.1u" H 4935 6795 50  0000 R CNN
+F 2 "coddingtonbear:0805_Milling" H 5088 6600 50  0001 C CNN
+F 3 "" H 5050 6750 50  0001 C CNN
+	1    5050 6750
+	-1   0    0    1   
+$EndComp
+$Comp
+L device:C C?
+U 1 1 5AB8EFA7
+P 5700 6850
+F 0 "C?" H 5585 6804 50  0000 R CNN
+F 1 "0.1u" H 5585 6895 50  0000 R CNN
+F 2 "coddingtonbear:0805_Milling" H 5738 6700 50  0001 C CNN
+F 3 "" H 5700 6850 50  0001 C CNN
+	1    5700 6850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5450 6700 5700 6700
+Wire Wire Line
+	6150 6700 5700 6700
+Connection ~ 5700 6700
+Wire Wire Line
+	5700 7000 6150 7000
+Wire Wire Line
+	6150 6800 6150 7000
+Connection ~ 6150 7000
+Wire Wire Line
+	5050 6900 5050 7000
+Wire Wire Line
+	5050 7000 5700 7000
+Connection ~ 5700 7000
+Wire Wire Line
+	4900 6600 5050 6600
+Wire Wire Line
+	5050 6600 6150 6600
+Connection ~ 5050 6600
 $EndSCHEMATC
